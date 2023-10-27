@@ -54,7 +54,7 @@ namespace MyRestaurantProject {
 			}
 		}
 	private: System::Windows::Forms::Button^ getReservations;
-	private: System::Windows::Forms::Button^ getReservation;
+
 	public:
 
 		String^ currentUser;
@@ -71,7 +71,7 @@ namespace MyRestaurantProject {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Label^ welcomeLabel;
+
 	private: System::Windows::Forms::ListBox^ listView;
 
 	private: System::Windows::Forms::Button^ btnSignOut;
@@ -153,7 +153,7 @@ namespace MyRestaurantProject {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->welcomeLabel = (gcnew System::Windows::Forms::Label());
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MainForm::typeid));
 			this->listView = (gcnew System::Windows::Forms::ListBox());
 			this->btnSignOut = (gcnew System::Windows::Forms::Button());
 			this->selectLabel = (gcnew System::Windows::Forms::Label());
@@ -165,19 +165,7 @@ namespace MyRestaurantProject {
 			this->btnDelete = (gcnew System::Windows::Forms::Button());
 			this->cbDay = (gcnew System::Windows::Forms::ComboBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->getReservation = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
-			// 
-			// welcomeLabel
-			// 
-			this->welcomeLabel->AutoSize = true;
-			this->welcomeLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->welcomeLabel->Location = System::Drawing::Point(12, 9);
-			this->welcomeLabel->Name = L"welcomeLabel";
-			this->welcomeLabel->Size = System::Drawing::Size(171, 29);
-			this->welcomeLabel->TabIndex = 0;
-			this->welcomeLabel->Text = L"welcomeLabel";
 			// 
 			// listView
 			// 
@@ -186,7 +174,7 @@ namespace MyRestaurantProject {
 			this->listView->FormattingEnabled = true;
 			this->listView->ItemHeight = 24;
 			this->listView->Items->AddRange(gcnew cli::array< System::Object^  >(5) { L"N201", L"N202", L"N203", L"N204", L"N205" });
-			this->listView->Location = System::Drawing::Point(21, 130);
+			this->listView->Location = System::Drawing::Point(188, 146);
 			this->listView->Name = L"listView";
 			this->listView->Size = System::Drawing::Size(133, 268);
 			this->listView->TabIndex = 1;
@@ -194,38 +182,45 @@ namespace MyRestaurantProject {
 			// 
 			// btnSignOut
 			// 
-			this->btnSignOut->BackColor = System::Drawing::Color::RosyBrown;
+			this->btnSignOut->BackColor = System::Drawing::Color::Transparent;
+			this->btnSignOut->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnSignOut.BackgroundImage")));
+			this->btnSignOut->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->btnSignOut->FlatAppearance->BorderSize = 0;
+			this->btnSignOut->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btnSignOut->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btnSignOut->Location = System::Drawing::Point(517, 12);
+			this->btnSignOut->Location = System::Drawing::Point(22, 399);
 			this->btnSignOut->Name = L"btnSignOut";
-			this->btnSignOut->Size = System::Drawing::Size(113, 36);
+			this->btnSignOut->Size = System::Drawing::Size(74, 15);
 			this->btnSignOut->TabIndex = 2;
-			this->btnSignOut->Text = L"Sign out";
 			this->btnSignOut->UseVisualStyleBackColor = false;
 			this->btnSignOut->Click += gcnew System::EventHandler(this, &MainForm::btnSignOut_Click);
 			// 
 			// selectLabel
 			// 
 			this->selectLabel->AutoSize = true;
+			this->selectLabel->BackColor = System::Drawing::Color::Transparent;
 			this->selectLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->selectLabel->Location = System::Drawing::Point(16, 74);
+			this->selectLabel->ForeColor = System::Drawing::Color::White;
+			this->selectLabel->Location = System::Drawing::Point(183, 90);
 			this->selectLabel->Name = L"selectLabel";
-			this->selectLabel->Size = System::Drawing::Size(77, 29);
+			this->selectLabel->Size = System::Drawing::Size(81, 29);
 			this->selectLabel->TabIndex = 3;
-			this->selectLabel->Text = L"select";
+			this->selectLabel->Text = L"Select";
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
+			this->label2->BackColor = System::Drawing::Color::Transparent;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label2->Location = System::Drawing::Point(200, 97);
+			this->label2->ForeColor = System::Drawing::Color::White;
+			this->label2->Location = System::Drawing::Point(367, 113);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(144, 29);
+			this->label2->Size = System::Drawing::Size(153, 29);
 			this->label2->TabIndex = 9;
-			this->label2->Text = L"reservations";
+			this->label2->Text = L"Reservations";
 			// 
 			// reservationView
 			// 
@@ -233,7 +228,7 @@ namespace MyRestaurantProject {
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->reservationView->FormattingEnabled = true;
 			this->reservationView->ItemHeight = 24;
-			this->reservationView->Location = System::Drawing::Point(205, 130);
+			this->reservationView->Location = System::Drawing::Point(372, 146);
 			this->reservationView->MultiColumn = true;
 			this->reservationView->Name = L"reservationView";
 			this->reservationView->Size = System::Drawing::Size(187, 268);
@@ -245,39 +240,54 @@ namespace MyRestaurantProject {
 				static_cast<System::Byte>(0)));
 			this->reservedView->FormattingEnabled = true;
 			this->reservedView->ItemHeight = 24;
-			this->reservedView->Location = System::Drawing::Point(440, 130);
+			this->reservedView->Location = System::Drawing::Point(607, 146);
 			this->reservedView->Name = L"reservedView";
 			this->reservedView->Size = System::Drawing::Size(187, 268);
 			this->reservedView->TabIndex = 12;
 			// 
 			// btnSuggest
 			// 
-			this->btnSuggest->Location = System::Drawing::Point(21, 404);
+			this->btnSuggest->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)), static_cast<System::Int32>(static_cast<System::Byte>(67)),
+				static_cast<System::Int32>(static_cast<System::Byte>(67)));
+			this->btnSuggest->FlatAppearance->BorderSize = 0;
+			this->btnSuggest->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btnSuggest->ForeColor = System::Drawing::Color::White;
+			this->btnSuggest->Location = System::Drawing::Point(188, 420);
 			this->btnSuggest->Name = L"btnSuggest";
-			this->btnSuggest->Size = System::Drawing::Size(75, 23);
+			this->btnSuggest->Size = System::Drawing::Size(58, 23);
 			this->btnSuggest->TabIndex = 13;
 			this->btnSuggest->Text = L"Suggest";
-			this->btnSuggest->UseVisualStyleBackColor = true;
+			this->btnSuggest->UseVisualStyleBackColor = false;
 			this->btnSuggest->Click += gcnew System::EventHandler(this, &MainForm::btnSuggest_Click);
 			// 
 			// btnReserve
 			// 
-			this->btnReserve->Location = System::Drawing::Point(205, 404);
+			this->btnReserve->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)), static_cast<System::Int32>(static_cast<System::Byte>(67)),
+				static_cast<System::Int32>(static_cast<System::Byte>(67)));
+			this->btnReserve->FlatAppearance->BorderSize = 0;
+			this->btnReserve->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btnReserve->ForeColor = System::Drawing::Color::White;
+			this->btnReserve->Location = System::Drawing::Point(372, 420);
 			this->btnReserve->Name = L"btnReserve";
-			this->btnReserve->Size = System::Drawing::Size(75, 23);
+			this->btnReserve->Size = System::Drawing::Size(58, 23);
 			this->btnReserve->TabIndex = 15;
 			this->btnReserve->Text = L"Reserve";
-			this->btnReserve->UseVisualStyleBackColor = true;
+			this->btnReserve->UseVisualStyleBackColor = false;
 			this->btnReserve->Click += gcnew System::EventHandler(this, &MainForm::btnReserve_Click);
 			// 
 			// btnDelete
 			// 
-			this->btnDelete->Location = System::Drawing::Point(440, 404);
+			this->btnDelete->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(241)), static_cast<System::Int32>(static_cast<System::Byte>(67)),
+				static_cast<System::Int32>(static_cast<System::Byte>(67)));
+			this->btnDelete->FlatAppearance->BorderSize = 0;
+			this->btnDelete->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btnDelete->ForeColor = System::Drawing::Color::White;
+			this->btnDelete->Location = System::Drawing::Point(607, 420);
 			this->btnDelete->Name = L"btnDelete";
-			this->btnDelete->Size = System::Drawing::Size(75, 23);
+			this->btnDelete->Size = System::Drawing::Size(58, 23);
 			this->btnDelete->TabIndex = 16;
 			this->btnDelete->Text = L"Delete";
-			this->btnDelete->UseVisualStyleBackColor = true;
+			this->btnDelete->UseVisualStyleBackColor = false;
 			this->btnDelete->Click += gcnew System::EventHandler(this, &MainForm::btnDelete_Click);
 			// 
 			// cbDay
@@ -287,7 +297,7 @@ namespace MyRestaurantProject {
 				L"Monday", L"Tuesday", L"Wednesday", L"Thursday", L"Friday",
 					L"Saturday", L"Sunday"
 			});
-			this->cbDay->Location = System::Drawing::Point(21, 106);
+			this->cbDay->Location = System::Drawing::Point(188, 122);
 			this->cbDay->Name = L"cbDay";
 			this->cbDay->Size = System::Drawing::Size(121, 21);
 			this->cbDay->TabIndex = 17;
@@ -296,33 +306,21 @@ namespace MyRestaurantProject {
 			// label1
 			// 
 			this->label1->AutoSize = true;
+			this->label1->BackColor = System::Drawing::Color::Transparent;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(435, 97);
+			this->label1->ForeColor = System::Drawing::Color::White;
+			this->label1->Location = System::Drawing::Point(602, 113);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(108, 29);
+			this->label1->Size = System::Drawing::Size(117, 29);
 			this->label1->TabIndex = 18;
-			this->label1->Text = L"reserved";
-			// 
-			// getReservation
-			// 
-			this->getReservation->BackColor = System::Drawing::Color::MistyRose;
-			this->getReservation->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->getReservation->Location = System::Drawing::Point(517, 58);
-			this->getReservation->Name = L"getReservation";
-			this->getReservation->Size = System::Drawing::Size(113, 36);
-			this->getReservation->TabIndex = 19;
-			this->getReservation->Text = L"Reservations";
-			this->getReservation->UseVisualStyleBackColor = false;
-			this->getReservation->Click += gcnew System::EventHandler(this, &MainForm::getReservation_Click);
+			this->label1->Text = L"Reserved";
 			// 
 			// MainForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
-			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(642, 467);
-			this->Controls->Add(this->getReservation);
+			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
+			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
+			this->ClientSize = System::Drawing::Size(811, 464);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->cbDay);
 			this->Controls->Add(this->btnDelete);
@@ -334,7 +332,7 @@ namespace MyRestaurantProject {
 			this->Controls->Add(this->selectLabel);
 			this->Controls->Add(this->btnSignOut);
 			this->Controls->Add(this->listView);
-			this->Controls->Add(this->welcomeLabel);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"MainForm";
 			this->Text = L"MyForm";
 			this->Load += gcnew System::EventHandler(this, &MainForm::MainForm_Load);

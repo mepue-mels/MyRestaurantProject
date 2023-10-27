@@ -37,15 +37,17 @@ namespace MyRestaurantProject {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Label^ label1;
+
 	protected:
-	private: System::Windows::Forms::Label^ label2;
-	private: System::Windows::Forms::Label^ label3;
+
+
 	private: System::Windows::Forms::TextBox^ tbUsername;
 	private: System::Windows::Forms::TextBox^ tbPassword;
 	private: System::Windows::Forms::Button^ btnOK;
 	private: System::Windows::Forms::Button^ btnCancel;
-	private: System::Windows::Forms::Button^ btnRegister;
+
+	private: System::Windows::Forms::LinkLabel^ llSignup;
+	private: System::Windows::Forms::Label^ label1;
 
 	private:
 		/// <summary>
@@ -60,109 +62,105 @@ namespace MyRestaurantProject {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->label3 = (gcnew System::Windows::Forms::Label());
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(LoginForm::typeid));
 			this->tbUsername = (gcnew System::Windows::Forms::TextBox());
 			this->tbPassword = (gcnew System::Windows::Forms::TextBox());
 			this->btnOK = (gcnew System::Windows::Forms::Button());
 			this->btnCancel = (gcnew System::Windows::Forms::Button());
-			this->btnRegister = (gcnew System::Windows::Forms::Button());
+			this->llSignup = (gcnew System::Windows::Forms::LinkLabel());
+			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
-			// 
-			// label1
-			// 
-			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 26.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(12, 39);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(544, 41);
-			this->label1->TabIndex = 0;
-			this->label1->Text = L"Login";
-			this->label1->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// label2
-			// 
-			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(14, 93);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(110, 25);
-			this->label2->TabIndex = 1;
-			this->label2->Text = L"Username";
-			// 
-			// label3
-			// 
-			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(14, 137);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(106, 25);
-			this->label3->TabIndex = 2;
-			this->label3->Text = L"Password";
-			this->label3->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			// 
 			// tbUsername
 			// 
-			this->tbUsername->Location = System::Drawing::Point(130, 93);
+			this->tbUsername->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18));
+			this->tbUsername->Location = System::Drawing::Point(312, 224);
 			this->tbUsername->Name = L"tbUsername";
-			this->tbUsername->Size = System::Drawing::Size(390, 31);
+			this->tbUsername->Size = System::Drawing::Size(247, 35);
 			this->tbUsername->TabIndex = 3;
 			// 
 			// tbPassword
 			// 
-			this->tbPassword->Location = System::Drawing::Point(130, 137);
+			this->tbPassword->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18));
+			this->tbPassword->Location = System::Drawing::Point(312, 319);
 			this->tbPassword->Name = L"tbPassword";
 			this->tbPassword->PasswordChar = '*';
-			this->tbPassword->Size = System::Drawing::Size(390, 31);
+			this->tbPassword->Size = System::Drawing::Size(247, 35);
 			this->tbPassword->TabIndex = 4;
 			// 
 			// btnOK
 			// 
-			this->btnOK->Location = System::Drawing::Point(130, 191);
+			this->btnOK->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(74)),
+				static_cast<System::Int32>(static_cast<System::Byte>(173)));
+			this->btnOK->FlatAppearance->BorderSize = 0;
+			this->btnOK->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btnOK->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btnOK->ForeColor = System::Drawing::Color::White;
+			this->btnOK->Location = System::Drawing::Point(312, 374);
 			this->btnOK->Name = L"btnOK";
-			this->btnOK->Size = System::Drawing::Size(157, 39);
+			this->btnOK->Size = System::Drawing::Size(247, 35);
 			this->btnOK->TabIndex = 5;
-			this->btnOK->Text = L"Ok";
-			this->btnOK->UseVisualStyleBackColor = true;
+			this->btnOK->Text = L"Sign in";
+			this->btnOK->UseVisualStyleBackColor = false;
 			this->btnOK->Click += gcnew System::EventHandler(this, &LoginForm::btnOK_Click);
 			// 
 			// btnCancel
 			// 
-			this->btnCancel->Location = System::Drawing::Point(363, 191);
+			this->btnCancel->BackColor = System::Drawing::Color::Transparent;
+			this->btnCancel->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnCancel.BackgroundImage")));
+			this->btnCancel->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->btnCancel->FlatAppearance->BorderSize = 0;
+			this->btnCancel->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btnCancel->Location = System::Drawing::Point(829, 12);
 			this->btnCancel->Name = L"btnCancel";
-			this->btnCancel->Size = System::Drawing::Size(157, 39);
+			this->btnCancel->Size = System::Drawing::Size(15, 15);
 			this->btnCancel->TabIndex = 6;
-			this->btnCancel->Text = L"Cancel";
-			this->btnCancel->UseVisualStyleBackColor = true;
+			this->btnCancel->UseVisualStyleBackColor = false;
 			this->btnCancel->Click += gcnew System::EventHandler(this, &LoginForm::btnCancel_Click);
 			// 
-			// btnRegister
+			// llSignup
 			// 
-			this->btnRegister->Location = System::Drawing::Point(363, 246);
-			this->btnRegister->Name = L"btnRegister";
-			this->btnRegister->Size = System::Drawing::Size(157, 39);
-			this->btnRegister->TabIndex = 7;
-			this->btnRegister->Text = L"Register";
-			this->btnRegister->UseVisualStyleBackColor = true;
-			this->btnRegister->Click += gcnew System::EventHandler(this, &LoginForm::btnRegister_Click);
+			this->llSignup->AutoSize = true;
+			this->llSignup->BackColor = System::Drawing::Color::Transparent;
+			this->llSignup->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->llSignup->LinkColor = System::Drawing::Color::Red;
+			this->llSignup->Location = System::Drawing::Point(431, 425);
+			this->llSignup->Name = L"llSignup";
+			this->llSignup->Size = System::Drawing::Size(50, 13);
+			this->llSignup->TabIndex = 9;
+			this->llSignup->TabStop = true;
+			this->llSignup->Text = L"Sign up";
+			this->llSignup->LinkClicked += gcnew System::Windows::Forms::LinkLabelLinkClickedEventHandler(this, &LoginForm::llSignup_LinkClicked);
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->BackColor = System::Drawing::Color::Transparent;
+			this->label1->Location = System::Drawing::Point(312, 425);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(122, 13);
+			this->label1->TabIndex = 8;
+			this->label1->Text = L"Don\'t have an account\?";
 			// 
 			// LoginForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(12, 25);
-			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
 			this->BackColor = System::Drawing::Color::Gainsboro;
-			this->ClientSize = System::Drawing::Size(568, 297);
-			this->Controls->Add(this->btnRegister);
+			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
+			this->ClientSize = System::Drawing::Size(856, 533);
+			this->Controls->Add(this->llSignup);
+			this->Controls->Add(this->label1);
 			this->Controls->Add(this->btnCancel);
 			this->Controls->Add(this->btnOK);
 			this->Controls->Add(this->tbPassword);
 			this->Controls->Add(this->tbUsername);
-			this->Controls->Add(this->label3);
-			this->Controls->Add(this->label2);
-			this->Controls->Add(this->label1);
-			this->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
+			this->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F));
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Margin = System::Windows::Forms::Padding(6);
 			this->Name = L"LoginForm";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"CLRS";
 			this->ResumeLayout(false);
 			this->PerformLayout();
@@ -213,9 +211,10 @@ namespace MyRestaurantProject {
 	}
 	public: bool switchToRegister = false;
 	
-	private: System::Void btnRegister_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void llSignup_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e) {
 		this->switchToRegister = true;
 		this->Close();
 	}
-	};
+	
+};
 }

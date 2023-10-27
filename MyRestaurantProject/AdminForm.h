@@ -45,9 +45,9 @@ namespace MyRestaurantProject {
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Button^ btnDelete;
 
-	private: System::Windows::Forms::Label^ label2;
+
 	private: System::Windows::Forms::Button^ btnSignOut;
-	private: System::Windows::Forms::Label^ label3;
+
 	private: System::Windows::Forms::Label^ label4;
 
 
@@ -72,12 +72,11 @@ namespace MyRestaurantProject {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(AdminForm::typeid));
 			this->tbUsername = (gcnew System::Windows::Forms::TextBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->btnDelete = (gcnew System::Windows::Forms::Button());
-			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->btnSignOut = (gcnew System::Windows::Forms::Button());
-			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->cbDay = (gcnew System::Windows::Forms::ComboBox());
 			this->button1 = (gcnew System::Windows::Forms::Button());
@@ -88,7 +87,7 @@ namespace MyRestaurantProject {
 			// 
 			// tbUsername
 			// 
-			this->tbUsername->Location = System::Drawing::Point(122, 371);
+			this->tbUsername->Location = System::Drawing::Point(295, 384);
 			this->tbUsername->Name = L"tbUsername";
 			this->tbUsername->Size = System::Drawing::Size(277, 20);
 			this->tbUsername->TabIndex = 0;
@@ -96,9 +95,11 @@ namespace MyRestaurantProject {
 			// label1
 			// 
 			this->label1->AutoSize = true;
+			this->label1->BackColor = System::Drawing::Color::Transparent;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(6, 366);
+			this->label1->ForeColor = System::Drawing::Color::White;
+			this->label1->Location = System::Drawing::Point(179, 379);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(110, 25);
 			this->label1->TabIndex = 1;
@@ -106,52 +107,39 @@ namespace MyRestaurantProject {
 			// 
 			// btnDelete
 			// 
-			this->btnDelete->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->btnDelete->Location = System::Drawing::Point(430, 333);
+			this->btnDelete->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F));
+			this->btnDelete->Location = System::Drawing::Point(578, 379);
 			this->btnDelete->Name = L"btnDelete";
-			this->btnDelete->Size = System::Drawing::Size(86, 67);
+			this->btnDelete->Size = System::Drawing::Size(46, 25);
 			this->btnDelete->TabIndex = 2;
-			this->btnDelete->Text = L"Delete User";
+			this->btnDelete->Text = L"Delete";
 			this->btnDelete->UseVisualStyleBackColor = true;
 			this->btnDelete->Click += gcnew System::EventHandler(this, &AdminForm::btnDelete_Click);
 			// 
-			// label2
-			// 
-			this->label2->Location = System::Drawing::Point(0, 0);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(100, 23);
-			this->label2->TabIndex = 5;
-			// 
 			// btnSignOut
 			// 
+			this->btnSignOut->BackColor = System::Drawing::Color::Transparent;
+			this->btnSignOut->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnSignOut.BackgroundImage")));
+			this->btnSignOut->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->btnSignOut->FlatAppearance->BorderSize = 0;
+			this->btnSignOut->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btnSignOut->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btnSignOut->Location = System::Drawing::Point(440, 12);
+			this->btnSignOut->Location = System::Drawing::Point(22, 394);
 			this->btnSignOut->Name = L"btnSignOut";
-			this->btnSignOut->Size = System::Drawing::Size(76, 25);
+			this->btnSignOut->Size = System::Drawing::Size(74, 15);
 			this->btnSignOut->TabIndex = 4;
-			this->btnSignOut->Text = L"Sign out";
-			this->btnSignOut->UseVisualStyleBackColor = true;
+			this->btnSignOut->UseVisualStyleBackColor = false;
 			this->btnSignOut->Click += gcnew System::EventHandler(this, &AdminForm::button2_Click);
-			// 
-			// label3
-			// 
-			this->label3->AutoSize = true;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label3->Location = System::Drawing::Point(6, 12);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(154, 25);
-			this->label3->TabIndex = 6;
-			this->label3->Text = L"Admin Center";
 			// 
 			// label4
 			// 
 			this->label4->AutoSize = true;
+			this->label4->BackColor = System::Drawing::Color::Transparent;
 			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label4->Location = System::Drawing::Point(6, 328);
+			this->label4->ForeColor = System::Drawing::Color::White;
+			this->label4->Location = System::Drawing::Point(179, 341);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(155, 25);
 			this->label4->TabIndex = 7;
@@ -164,7 +152,7 @@ namespace MyRestaurantProject {
 				L"Monday", L"Tuesday", L"Thursday", L"Friday", L"Saturday",
 					L"Sunday"
 			});
-			this->cbDay->Location = System::Drawing::Point(11, 178);
+			this->cbDay->Location = System::Drawing::Point(184, 191);
 			this->cbDay->Name = L"cbDay";
 			this->cbDay->Size = System::Drawing::Size(121, 21);
 			this->cbDay->TabIndex = 9;
@@ -174,7 +162,7 @@ namespace MyRestaurantProject {
 			// 
 			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button1->Location = System::Drawing::Point(30, 254);
+			this->button1->Location = System::Drawing::Point(203, 267);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(86, 29);
 			this->button1->TabIndex = 10;
@@ -186,7 +174,7 @@ namespace MyRestaurantProject {
 			// 
 			this->cbRoom->FormattingEnabled = true;
 			this->cbRoom->Items->AddRange(gcnew cli::array< System::Object^  >(5) { L"N201", L"N202", L"N203", L"N204", L"N205" });
-			this->cbRoom->Location = System::Drawing::Point(12, 151);
+			this->cbRoom->Location = System::Drawing::Point(184, 164);
 			this->cbRoom->Name = L"cbRoom";
 			this->cbRoom->Size = System::Drawing::Size(121, 21);
 			this->cbRoom->TabIndex = 12;
@@ -196,7 +184,7 @@ namespace MyRestaurantProject {
 			// 
 			this->btnView->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btnView->Location = System::Drawing::Point(30, 211);
+			this->btnView->Location = System::Drawing::Point(203, 224);
 			this->btnView->Name = L"btnView";
 			this->btnView->Size = System::Drawing::Size(86, 29);
 			this->btnView->TabIndex = 13;
@@ -207,29 +195,29 @@ namespace MyRestaurantProject {
 			// listView1
 			// 
 			this->listView1->FormattingEnabled = true;
-			this->listView1->Location = System::Drawing::Point(159, 87);
+			this->listView1->Location = System::Drawing::Point(332, 100);
 			this->listView1->Name = L"listView1";
 			this->listView1->Size = System::Drawing::Size(292, 225);
 			this->listView1->TabIndex = 14;
 			// 
 			// AdminForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
-			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(528, 412);
+			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
+			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
+			this->ClientSize = System::Drawing::Size(644, 442);
 			this->Controls->Add(this->listView1);
 			this->Controls->Add(this->btnView);
 			this->Controls->Add(this->cbRoom);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->cbDay);
 			this->Controls->Add(this->label4);
-			this->Controls->Add(this->label3);
 			this->Controls->Add(this->btnSignOut);
-			this->Controls->Add(this->label2);
 			this->Controls->Add(this->btnDelete);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->tbUsername);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"AdminForm";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"AdminForm";
 			this->Load += gcnew System::EventHandler(this, &AdminForm::AdminForm_Load);
 			this->ResumeLayout(false);

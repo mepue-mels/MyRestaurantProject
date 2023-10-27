@@ -53,7 +53,8 @@ namespace MyRestaurantProject {
 
 
 
-	private: System::Windows::Forms::Button^ btnLogin;
+
+	private: System::Windows::Forms::LinkLabel^ linkLabel1;
 
 
 	private:
@@ -69,6 +70,7 @@ namespace MyRestaurantProject {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(RegisterForm::typeid));
 			this->userLabel = (gcnew System::Windows::Forms::Label());
 			this->passLabel = (gcnew System::Windows::Forms::Label());
 			this->verifyPassLabel = (gcnew System::Windows::Forms::Label());
@@ -78,113 +80,135 @@ namespace MyRestaurantProject {
 			this->lbVerifyPassword = (gcnew System::Windows::Forms::TextBox());
 			this->lbName = (gcnew System::Windows::Forms::TextBox());
 			this->btnOK = (gcnew System::Windows::Forms::Button());
-			this->btnLogin = (gcnew System::Windows::Forms::Button());
+			this->linkLabel1 = (gcnew System::Windows::Forms::LinkLabel());
 			this->SuspendLayout();
 			// 
 			// userLabel
 			// 
 			this->userLabel->AutoSize = true;
-			this->userLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->userLabel->BackColor = System::Drawing::Color::Transparent;
+			this->userLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->userLabel->Location = System::Drawing::Point(32, 130);
+			this->userLabel->ForeColor = System::Drawing::Color::White;
+			this->userLabel->Location = System::Drawing::Point(47, 197);
 			this->userLabel->Name = L"userLabel";
-			this->userLabel->Size = System::Drawing::Size(110, 25);
+			this->userLabel->Size = System::Drawing::Size(83, 20);
 			this->userLabel->TabIndex = 0;
 			this->userLabel->Text = L"Username";
 			// 
 			// passLabel
 			// 
 			this->passLabel->AutoSize = true;
-			this->passLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->passLabel->BackColor = System::Drawing::Color::Transparent;
+			this->passLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->passLabel->Location = System::Drawing::Point(32, 169);
+			this->passLabel->ForeColor = System::Drawing::Color::White;
+			this->passLabel->Location = System::Drawing::Point(47, 243);
 			this->passLabel->Name = L"passLabel";
-			this->passLabel->Size = System::Drawing::Size(106, 25);
+			this->passLabel->Size = System::Drawing::Size(78, 20);
 			this->passLabel->TabIndex = 1;
 			this->passLabel->Text = L"Password";
 			// 
 			// verifyPassLabel
 			// 
 			this->verifyPassLabel->AutoSize = true;
-			this->verifyPassLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->verifyPassLabel->Location = System::Drawing::Point(32, 205);
+			this->verifyPassLabel->BackColor = System::Drawing::Color::Transparent;
+			this->verifyPassLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->verifyPassLabel->ForeColor = System::Drawing::Color::White;
+			this->verifyPassLabel->Location = System::Drawing::Point(47, 289);
 			this->verifyPassLabel->Name = L"verifyPassLabel";
-			this->verifyPassLabel->Size = System::Drawing::Size(165, 25);
+			this->verifyPassLabel->Size = System::Drawing::Size(121, 20);
 			this->verifyPassLabel->TabIndex = 2;
 			this->verifyPassLabel->Text = L"Verify password";
 			// 
 			// nameLabel
 			// 
 			this->nameLabel->AutoSize = true;
-			this->nameLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->nameLabel->BackColor = System::Drawing::Color::Transparent;
+			this->nameLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->nameLabel->Location = System::Drawing::Point(32, 241);
+			this->nameLabel->ForeColor = System::Drawing::Color::White;
+			this->nameLabel->Location = System::Drawing::Point(47, 335);
 			this->nameLabel->Name = L"nameLabel";
-			this->nameLabel->Size = System::Drawing::Size(68, 25);
+			this->nameLabel->Size = System::Drawing::Size(51, 20);
 			this->nameLabel->TabIndex = 3;
 			this->nameLabel->Text = L"Name";
 			// 
 			// lbUser
 			// 
-			this->lbUser->Location = System::Drawing::Point(202, 135);
+			this->lbUser->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->lbUser->Location = System::Drawing::Point(51, 220);
 			this->lbUser->Name = L"lbUser";
-			this->lbUser->Size = System::Drawing::Size(298, 20);
+			this->lbUser->Size = System::Drawing::Size(259, 21);
 			this->lbUser->TabIndex = 4;
 			// 
 			// lbPassword
 			// 
-			this->lbPassword->Location = System::Drawing::Point(202, 169);
+			this->lbPassword->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->lbPassword->Location = System::Drawing::Point(51, 266);
 			this->lbPassword->Name = L"lbPassword";
 			this->lbPassword->PasswordChar = '*';
-			this->lbPassword->Size = System::Drawing::Size(298, 20);
+			this->lbPassword->Size = System::Drawing::Size(259, 21);
 			this->lbPassword->TabIndex = 5;
 			// 
 			// lbVerifyPassword
 			// 
-			this->lbVerifyPassword->Location = System::Drawing::Point(203, 205);
+			this->lbVerifyPassword->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->lbVerifyPassword->Location = System::Drawing::Point(51, 312);
 			this->lbVerifyPassword->Name = L"lbVerifyPassword";
 			this->lbVerifyPassword->PasswordChar = '*';
-			this->lbVerifyPassword->Size = System::Drawing::Size(298, 20);
+			this->lbVerifyPassword->Size = System::Drawing::Size(259, 21);
 			this->lbVerifyPassword->TabIndex = 6;
 			// 
 			// lbName
 			// 
-			this->lbName->Location = System::Drawing::Point(203, 241);
+			this->lbName->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->lbName->Location = System::Drawing::Point(51, 358);
 			this->lbName->Name = L"lbName";
-			this->lbName->Size = System::Drawing::Size(298, 20);
+			this->lbName->Size = System::Drawing::Size(259, 21);
 			this->lbName->TabIndex = 7;
 			// 
 			// btnOK
 			// 
-			this->btnOK->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->btnOK->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(78)), static_cast<System::Int32>(static_cast<System::Byte>(79)),
+				static_cast<System::Int32>(static_cast<System::Byte>(235)));
+			this->btnOK->FlatAppearance->BorderSize = 0;
+			this->btnOK->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btnOK->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btnOK->Location = System::Drawing::Point(284, 317);
+			this->btnOK->ForeColor = System::Drawing::Color::White;
+			this->btnOK->Location = System::Drawing::Point(50, 385);
 			this->btnOK->Name = L"btnOK";
-			this->btnOK->Size = System::Drawing::Size(75, 35);
+			this->btnOK->Size = System::Drawing::Size(74, 26);
 			this->btnOK->TabIndex = 8;
-			this->btnOK->Text = L"Ok";
-			this->btnOK->UseVisualStyleBackColor = true;
+			this->btnOK->Text = L"Sign up";
+			this->btnOK->UseVisualStyleBackColor = false;
 			this->btnOK->Click += gcnew System::EventHandler(this, &RegisterForm::btnOK_Click);
 			// 
-			// btnLogin
+			// linkLabel1
 			// 
-			this->btnLogin->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->btnLogin->Location = System::Drawing::Point(368, 317);
-			this->btnLogin->Name = L"btnLogin";
-			this->btnLogin->Size = System::Drawing::Size(133, 33);
-			this->btnLogin->TabIndex = 10;
-			this->btnLogin->Text = L"Back to login";
-			this->btnLogin->UseVisualStyleBackColor = true;
-			this->btnLogin->Click += gcnew System::EventHandler(this, &RegisterForm::btnLogin_Click);
+			this->linkLabel1->AutoSize = true;
+			this->linkLabel1->BackColor = System::Drawing::Color::Transparent;
+			this->linkLabel1->LinkBehavior = System::Windows::Forms::LinkBehavior::HoverUnderline;
+			this->linkLabel1->Location = System::Drawing::Point(229, 465);
+			this->linkLabel1->Name = L"linkLabel1";
+			this->linkLabel1->Size = System::Drawing::Size(69, 13);
+			this->linkLabel1->TabIndex = 11;
+			this->linkLabel1->TabStop = true;
+			this->linkLabel1->Text = L"Back to login";
+			this->linkLabel1->LinkClicked += gcnew System::Windows::Forms::LinkLabelLinkClickedEventHandler(this, &RegisterForm::linkLabel1_LinkClicked);
 			// 
 			// RegisterForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
-			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(528, 412);
-			this->Controls->Add(this->btnLogin);
+			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::None;
+			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
+			this->ClientSize = System::Drawing::Size(856, 533);
+			this->Controls->Add(this->linkLabel1);
 			this->Controls->Add(this->btnOK);
 			this->Controls->Add(this->lbName);
 			this->Controls->Add(this->lbVerifyPassword);
@@ -194,7 +218,9 @@ namespace MyRestaurantProject {
 			this->Controls->Add(this->verifyPassLabel);
 			this->Controls->Add(this->passLabel);
 			this->Controls->Add(this->userLabel);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"RegisterForm";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"RegisterForm";
 			this->ResumeLayout(false);
 			this->PerformLayout();
@@ -271,9 +297,10 @@ namespace MyRestaurantProject {
 		this->Close();
 	}
 	public: bool switchToLogin = false;
-	private: System::Void btnLogin_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void linkLabel1_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e) {
 		this->switchToLogin = true;
 		this->Close();
 	}
+
 };
 }
